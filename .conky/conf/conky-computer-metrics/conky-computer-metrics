@@ -40,15 +40,16 @@ conky.config = {
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
 ${voffset 300}
-${alignr}${offset 3}┌──────── ${nodename}${font} ─────────────
+${offset 1000}
+${alignr}${offset 13}┌──────── ${nodename}${font} ─────────────
 ${alignr}${offset -58}└───${uid_name 1000}${font} ───────┐
 ${alignr}${offset -58}< ${exec lsb_release -ds | sed 's/"//g'} > Distro ─┤
 ${alignr}${offset -58}< ${kernel} > Kernel ─┤
 ${alignr}${offset -58}< ${uptime_short} > Uptime ─┘
 ${voffset 0}
-${alignr}${offset 11}┌───── < ${execi 1000 cat /proc/cpuinfo|grep 'model name'|sed -e 's/model name.*: //'|uniq|cut -c 1-36|sed 's/(R)//g'|sed 's/(TM)//g'|sed 's/CPU     //g'} > ───┬────────────
-${alignr}${offset -297}│${offset 241}│
-${alignr}${offset -224}└─── Processes${offset 168}│
+${alignr}${offset 21}┌───── < ${execi 1000 cat /proc/cpuinfo|grep 'model name'|sed -e 's/model name.*: //'|uniq|cut -c 1-36|sed 's/(R)//g'|sed 's/(TM)//g'|sed 's/CPU     //g'} > ───┬────────────
+${alignr}${offset -331}│${offset 275}│
+${alignr}${offset -248}└─── Processes${offset 192}│
 ${alignr}${offset -126}< ${top name 1}  ${top cpu 1} >${offset 70}│
 ${alignr}${offset -126}< ${top name 2}  ${top cpu 2} >${offset 70}│
 ${alignr}${offset -126}< ${top name 3}  ${top cpu 3} >${offset 70}│
@@ -61,7 +62,7 @@ ${voffset 25}
 ${alignr}${offset -60}Hard Drive ─────────────────┐
 ${alignr}${offset -70}< ${fs_used_perc}% > Root < ${color #BEC8CB}${fs_bar 5,120 /}${color} >${offset 10}│
 ${alignr}${offset -70}< ${fs_used_perc /home}% > Home < ${color #BEC8CB}${fs_bar 5,120 /home}${color} >${offset 10}│
-${alignr}${offset -3}< ${swapperc}% > Swap < ${color #BEC8CB}${swapbar 5,120}${color} >${offset 5} └───────────
+${alignr}${offset -7}< ${swapperc}% > Swap < ${color #BEC8CB}${swapbar 5,120}${color} >${offset 11}└──────────
 # ${alignr}${offset -640}volume: ${exec amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'}
 
 ]];
